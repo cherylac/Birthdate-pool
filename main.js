@@ -2,13 +2,23 @@
 // and `email` and makes those available as attributes. The `constructor()`
 // method should also break the username from before the `@` symbol in the
 // `email` value and use that to store on a `this.username` property.
-
+class Person {
+    constructor(name, email); {
+        this.name = name;
+        this.email = email;
+        this.username = email.split('@')[0];
+    }
+}
 // TODO: Create another class that extends the `Person` class called `Contestant`.
 // (NOTE: You will need to
 // use the `super()` command so you don't lose the functionality of the
 // `constructor()` method from the `Person` class.)
 //
-
+class Contestant extends Person {
+    super(name, email);
+    this.birthdate = birthdate;
+    this.babyname = babyjname;
+}
 
 // TODO: Create another method on the `Contestant` class called `check birthdate`.
 // This method should calculate the amount of time between birthdate and actual date.
@@ -18,7 +28,7 @@
 
 // TODO: Set up Contest class so we can run the whole roster from it.
 class Contest
-    constructor(contestants, dateguess){
+    constructor(){
         this.contestants = [];
     }
 
@@ -33,6 +43,15 @@ class Contest
     // to reference the Class instance using `this` as a parameter for
     // `updateRoster()`, so it might look like this: `updateRoster(this)`.
 
+addContestant(){
+          let name = prompt('Please enter your name');
+          let email = prompt('and your email');
+          let birthdate = prompt('What day and time will the baby be born? Please enter as MM/DD/YYYY 00:00');
+          let babyname = prompt('What will thet baby\'\s name be?');
+          let newContestant = new Contestant(name, email);
+          this.contestants.push(newContestant);
+          updateRoster(this);
+      }
 
     
     // TODO: Now that we have retrieved the specific `Contestant` object we want
@@ -49,8 +68,8 @@ class Contest
         // This method takes in a username and looks
         // for that username on contestant objects contained in the `this.contestants`
         // Array.
-        let foundContestant = this.contestants.find(function(contesants, index){
-            return constestant.username == username;
+        let foundContestant = this.contestants.find(function(contestants, index){
+            return contestant.username == username;
         });
         return foundContestant;
     }
@@ -72,11 +91,12 @@ let rosterTbody = document.querySelector('#roster tbody');
 // Clear Roster Content
 rosterTbody.innerHTML = '';
 
+let myContest
 // Create event listener for adding a contestant.
 let addContestantButton = document.querySelector('#add-contestant');
 addContestantButton.addEventListener('click', function(e){
     console.log('Calling addContestant() method.');
-    myContest.addStudent();
+    myContest.addContestant();
 })
 
 
