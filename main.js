@@ -1,7 +1,4 @@
-// TODO: Create a base class called `Person` that takes the parameters `name`
-// and `email` and makes those available as attributes. The `constructor()`
-// method should also break the username from before the `@` symbol in the
-// `email` value and use that to store on a `this.username` property.
+
 class Person {
     constructor(name, email) {
         this.name = name;
@@ -9,11 +6,7 @@ class Person {
         this.username = email.split('@')[0];
     }
 }
-// TODO: Create another class that extends the `Person` class called `Contestant`.
-// (NOTE: You will need to
-// use the `super()` command so you don't lose the functionality of the
-// `constructor()` method from the `Person` class.)
-//
+
 class Contestant extends Person {
     constructor(name, email, birthdate, babyname){
     super(name, email);
@@ -27,10 +20,6 @@ class Contestant extends Person {
 // TODO: Create another method on the `Contestant` class called `check birthdate`.
 // This method should calculate the amount of time between birthdate and actual date.
 
-
-
-
-// TODO: Set up Contest class so we can run the whole roster from it.
 class Contest {
     constructor(){
         this.contestants = [];
@@ -39,7 +28,6 @@ class Contest {
 
     updateRoster(contest){
         let rosterTbody = document.querySelector('#roster tbody');
-        // Clear Roster Content
         rosterTbody.innerHTML = '';
        
         // Populate Roster Content
@@ -101,10 +89,5 @@ addContestantButton.addEventListener('click', function(e){
     let myContest = new Contest();
     myContest.addContestant();
 })
-
-
-
-// Call Update Roster to initialize the content of the page.
-//updateRoster(myContest);
 
 
