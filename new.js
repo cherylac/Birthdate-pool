@@ -1,3 +1,4 @@
+
 class Person {
     constructor(name, email) {
         this.name = name;
@@ -88,3 +89,4 @@ addContestantButton.addEventListener('click', function(e){
     let myContest = new Contest();
     myContest.addContestant();
 })
+
