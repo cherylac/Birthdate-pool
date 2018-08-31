@@ -17,7 +17,7 @@ class Contestant extends Person {
 
 }
 
-// TODO: Create another method on the `Contestant` class called `check birthdate`.
+// TODO: Create another method on the `Contestant` class called `check birthdate`. Extra note.
 // This method should calculate the amount of time between birthdate and actual date.
 
 class Contest {
